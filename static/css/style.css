@@ -1,0 +1,272 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Tahoma', 'Vazirmatn', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+  padding: 20px;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.heart {
+  position: fixed;
+  font-size: 20px;
+  color: #ff4d6d;
+  opacity: 0.7;
+  animation: floatUp 6s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes floatUp {
+  0%   { transform: translateY(100vh) scale(0.5); opacity: 0; }
+  20%  { opacity: 0.8; }
+  100% { transform: translateY(-100px) scale(1.2); opacity: 0; }
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  padding: 40px 30px;
+  max-width: 560px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(255, 77, 109, 0.3);
+  position: relative;
+  z-index: 1;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.clock-box {
+  background: linear-gradient(135deg, #ff4d6d, #c9184a);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 15px;
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 14px;
+  box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
+}
+
+.clock-box span {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+h1 {
+  color: #c9184a;
+  font-size: 26px;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.emoji-big {
+  font-size: 55px;
+  margin-bottom: 12px;
+  display: block;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.15); }
+}
+
+.message {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+
+.name {
+  color: #ff4d6d;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* ===== انتخابگر تاریخ و ساعت ===== */
+.datetime-picker {
+  background: #fff0f3;
+  border-radius: 20px;
+  padding: 18px 15px;
+  margin: 20px 0;
+  border: 2px dashed #ffb3c1;
+}
+
+.datetime-picker h3 {
+  color: #c9184a;
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+.picker-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.picker-row:last-child {
+  margin-bottom: 0;
+}
+
+.picker-row label {
+  color: #c9184a;
+  font-size: 14px;
+  font-weight: bold;
+  min-width: 75px;
+}
+
+.picker-row select {
+  padding: 8px 12px;
+  border: 2px solid #ffb3c1;
+  border-radius: 10px;
+  background: white;
+  color: #c9184a;
+  font-size: 14px;
+  font-family: 'Tahoma', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 70px;
+}
+
+.picker-row select:hover {
+  border-color: #ff4d6d;
+  box-shadow: 0 3px 10px rgba(255, 77, 109, 0.2);
+}
+
+.picker-row select:focus {
+  outline: none;
+  border-color: #ff4d6d;
+  box-shadow: 0 0 0 3px rgba(255, 77, 109, 0.15);
+}
+
+.picker-row span {
+  color: #c9184a;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* ===== دکمه‌ها ===== */
+.buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+button {
+  padding: 14px 32px;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Tahoma', sans-serif;
+}
+
+.btn-yes {
+  background: linear-gradient(135deg, #ff4d6d, #c9184a);
+  color: white;
+  box-shadow: 0 8px 20px rgba(255, 77, 109, 0.4);
+}
+
+.btn-yes:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 25px rgba(255, 77, 109, 0.6);
+}
+
+.btn-no {
+  background: #e0e0e0;
+  color: #666;
+  position: relative;
+}
+
+.btn-no:hover {
+  background: #d0d0d0;
+}
+
+/* ===== صفحه پاسخ ===== */
+.response {
+  display: none;
+  animation: fadeIn 0.6s ease;
+}
+
+.response h2 {
+  color: #c9184a;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.response p {
+  color: #666;
+  font-size: 16px;
+  line-height: 2;
+  margin-bottom: 15px;
+}
+
+.date-info {
+  background: #fff0f3;
+  border-radius: 15px;
+  padding: 18px;
+  margin: 20px 0;
+  color: #c9184a;
+  font-size: 15px;
+  border: 1px dashed #ff4d6d;
+}
+
+.date-info strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.btn-back {
+  background: #ff4d6d;
+  color: white;
+  margin-top: 10px;
+  padding: 12px 30px;
+  font-size: 15px;
+}
+
+.btn-back:hover {
+  background: #c9184a;
+  transform: scale(1.05);
+}
+
+/* ریسپانسیو */
+@media (max-width: 480px) {
+  .container { padding: 25px 18px; }
+  h1 { font-size: 21px; }
+  .emoji-big { font-size: 45px; }
+  .message { font-size: 14px; }
+  button { padding: 12px 24px; font-size: 14px; }
+  .picker-row label { min-width: 65px; font-size: 13px; }
+  .picker-row select { padding: 6px 8px; font-size: 13px; min-width: 60px; }
+}
+
+.footer-note {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #bbb;
+}

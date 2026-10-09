@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دعوت به دیت 💕</title>
+<link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+
+<div class="container">
+  <!-- صفحه اصلی -->
+  <div id="mainPage">
+    <div class="clock-box">
+      🕐 الان ساعت <span id="liveClock">--:--:--</span> — <span id="liveDate"></span>
+    </div>
+
+    <span class="emoji-big">💌</span>
+    <h1>سلام <span class="name">عزیزم</span> 🌹</h1>
+    <p class="message">
+      یه سوال خیلی مهم ازت داشتم...<br>
+      دوست داری یه <b>دیت</b> خیلی خاص و به‌یادموندنی با هم داشته باشیم؟ ☕🍰
+    </p>
+
+    <!-- انتخاب تاریخ و ساعت -->
+    <div class="datetime-picker">
+      <h3>📅 برای کی و چه ساعتی هماهنگ کنیم؟</h3>
+
+      <div class="picker-row">
+        <label>📆 روز دیت:</label>
+        <select id="daySelect"></select>
+        <select id="monthSelect"></select>
+        <select id="yearSelect"></select>
+      </div>
+
+      <div class="picker-row">
+        <label>⏰ ساعت دیت:</label>
+        <select id="hourSelect"></select>
+        <span>:</span>
+        <select id="minuteSelect"></select>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button class="btn-yes" onclick="sayYes()">آره، حتماً! 💖</button>
+      <button class="btn-no" id="noBtn" onmouseover="moveNoBtn()" onclick="moveNoBtn()">نه 🙈</button>
+    </div>
+
+    <p class="footer-note">ساخته شده با ❤️ برای تو</p>
+  </div>
+
+  <!-- صفحه پاسخ مثبت -->
+  <div class="response" id="responsePage">
+    <span class="emoji-big">🎉💕</span>
+    <h2>وای عالی شد!</h2>
+    <p>خیلی خوشحالم که قبول کردی 🥰</p>
+
+    <div class="date-info">
+      <strong>📅 تاریخ دیت ما:</strong>
+      <span id="responseDate"></span>
+      <br><br>
+      <strong>⏰ ساعت دیت ما:</strong>
+      <span id="responseTime"></span>
+    </div>
+
+    <p style="font-size:14px;">منتظرت می‌مونم عزیزم 💐</p>
+    <button class="btn-back" onclick="goBack()">بازگشت 🔙</button>
+  </div>
+</div>
+
+<script src="static/js/script.js"></script>
+</body>
+</html>
